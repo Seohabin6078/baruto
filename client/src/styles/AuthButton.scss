@@ -1,0 +1,47 @@
+@import './variables.module.scss';
+
+.auth-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.auth-button--normal {
+  width: 200px;
+  height: 40px;
+  border-radius: 2px;
+}
+
+.auth-button--large {
+  width: 300px;
+  height: 50px;
+  border-radius: 4px;
+}
+
+.auth-button--accessible {
+  background-color: $primary_color_5;
+  color: $gray_color_1;
+}
+
+.auth-button--disabled {
+  background-color: $disabled;
+  color: $gray_color_3;
+
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
+.auth-button--loading {
+  background-color: $disabled;
+  color: $gray_color_3;
+
+  &:hover {
+    cursor: not-allowed;
+  }
+}

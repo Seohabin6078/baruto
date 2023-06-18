@@ -1,0 +1,38 @@
+@import './variables.module.scss';
+
+.container {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 450px;
+
+
+  color: white;
+}
+
+.background_image {
+  opacity: 0.6;
+}
+.background_image_wrapper {
+  background-color: $gray_color_13;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  z-index: -1;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}

@@ -1,0 +1,57 @@
+@import './variables.module.scss';
+
+.auth-input-container {
+  position: relative;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  width: 300px;
+  height: 60px;
+}
+
+.auth-input-label {
+  position: absolute;
+
+  left: 0px;
+  font-size: $font_size_M;
+
+  transition: all 0.15s ease-in-out;
+  pointer-events: none;
+
+}
+
+.auth-input {
+  border: none;
+  border-bottom: 1px solid black;
+
+  outline: none;
+
+  width: 100%;
+  height: 40px;
+
+  font-size: $font_size_M;
+
+  &.auth-input--focus {
+    border-bottom-color: $primary_color_5;
+
+    & + label {
+      transform: translateY(-20px);
+      font-size: $font_size_XS;
+      
+      color: $primary_color_5;
+    }
+  }
+
+  &.auth-input--error {
+    border-bottom-color: $error_color;
+
+    & + label {
+      transform: translateY(-20px);
+      font-size: $font_size_XS;
+      
+      color: $error_color;
+    }
+  }
+}

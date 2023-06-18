@@ -1,0 +1,39 @@
+@import './variables.module.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 60px;
+
+  background-color: $gray_color_2;
+}
+
+.logo {
+  width: 72px;
+  display: flex;
+  justify-content: center;
+}
+.settings {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+
+}
+
+.setting_item {
+  width: 72px;
+  display: flex;
+  justify-content: center;
+
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+
+  &:hover {
+    cursor: pointer;
+    // color: $gray_color_7;
+    opacity: 0.4;
+  }
+}
