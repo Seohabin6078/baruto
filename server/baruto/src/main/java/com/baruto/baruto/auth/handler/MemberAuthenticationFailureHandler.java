@@ -1,10 +1,8 @@
 package com.baruto.baruto.auth.handler;
 
-import com.baruto.baruto.response.ErrorResponse;
-import com.google.gson.Gson;
+import com.baruto.baruto.auth.utils.ErrorResponder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 
@@ -20,15 +18,15 @@ public class MemberAuthenticationFailureHandler implements AuthenticationFailure
                                         HttpServletResponse response,
                                         AuthenticationException exception) throws IOException, ServletException {
         log.error("# Authentication failed: {}", exception.getMessage());
-        sendErrorResponse(response);
+        ErrorResponder.sendErrorResponse(response, HttpStatus.UNAUTHORIZED);
     }
 
     // 요거 ErrorResponder클래스의 sendErrorResponse랑 겹침!! 수정하기!!
-    private void sendErrorResponse(HttpServletResponse response) throws IOException {
-        Gson gson = new Gson();
-        ErrorResponse errorResponse = ErrorResponse.of(HttpStatus.UNAUTHORIZED);
-        response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-        response.setStatus(HttpStatus.UNAUTHORIZED.value());
-        response.getWriter().write(gson.toJson(errorResponse, ErrorResponse.class));
-    }
+//    private void sendErrorResponse(HttpServletResponse response) throws IOException {
+//        Gson gson = new Gson();
+//        ErrorResponse errorResponse = ErrorResponse.of(HttpStatus.UNAUTHORIZED);
+//        response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+//        response.setStatus(HttpStatus.UNAUTHORIZED.value());
+//        response.getWriter().write(gson.toJson(errorResponse, ErrorResponse.class));
+//    }
 }
