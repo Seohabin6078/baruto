@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_daf7ac7333ac80d"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.29.13",
@@ -38,5 +39,7 @@
     "sass": "^1.63.4",
     "storybook": "^7.0.21",
     "tsconfig-paths-webpack-plugin": "^4.0.1"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "client@0.1.0"
 }
