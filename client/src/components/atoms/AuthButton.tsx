@@ -1,10 +1,9 @@
+import { ButtonSize, ButtonState } from '@/hooks/useAuthButton'
 import '../../styles/AuthButton.scss'
 
-type ButtonSize = 'normal' | 'large'
-type ButtonState = 'accessible' | 'disabled' | 'loading'
 
 interface IAuthButton {
-  action?: () => void,
+  action: () => void,
   string: string,
   size: ButtonSize
   state: ButtonState

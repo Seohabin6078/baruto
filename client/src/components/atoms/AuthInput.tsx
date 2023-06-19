@@ -1,5 +1,5 @@
+import { AuthInputState } from '@/hooks/useAuthInput'
 import '../../styles/AuthInput.scss'
-import { AuthInputState } from '../molecules/AuthForm'
 
 type AuthInputType = 'email' | 'password'
 
@@ -8,7 +8,7 @@ interface IAuthInput {
   label: string
   type: AuthInputType
   onClick: () => void
-  onChange: () => void
+  onChange: (value: string) => void
   onBlur: () => void
 }
 
@@ -17,7 +17,7 @@ const AuthInput = ({state, label, type, onClick, onChange, onBlur}: IAuthInput) 
     <div className='auth-input-container'>
       <input
         onClick={onClick}
-        onChange={onChange}
+        onChange={(e) => onChange(e.target.value)}
         onBlur={onBlur}
         type={type}
         className={getInputClassName(state)}
